@@ -1,0 +1,7 @@
+{
+  "name": "login-autentic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
