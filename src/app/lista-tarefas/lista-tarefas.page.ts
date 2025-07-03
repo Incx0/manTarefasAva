@@ -17,18 +17,15 @@ import {
   IonCardSubtitle,
   IonProgressBar, 
   IonButton,
-  IonList,
   IonItem,
-  IonLabel,
-  IonText,
   IonIcon,
-  IonBadge,
   IonSelect,
   IonSelectOption,
-  IonInput
+  IonInput,
+  IonRouterLink
 } from '@ionic/angular/standalone';
 import { RealtimeDatabaseService } from '../firebase/realtime-database.service';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, RouterLink, RouterModule } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
 @Component({
@@ -36,7 +33,8 @@ import { AlertController } from '@ionic/angular';
   templateUrl: './lista-tarefas.page.html',
   styleUrls: ['./lista-tarefas.page.scss'],
   standalone: true,
-  imports: [IonInput, 
+  imports: [
+    IonInput, 
     IonContent,
     FormsModule,
     IonHeader, 
@@ -52,16 +50,13 @@ import { AlertController } from '@ionic/angular';
     NgForOf,
     CommonModule,
     IonButton,
-    IonList,
     IonItem,
-    IonLabel,
-    IonText,
     IonIcon,
-    IonBadge, 
     TitleCasePipe,
     IonSelect,
     IonSelectOption,
-    IonInput
+    IonInput,
+    RouterLink
   ]
 })
 export class ListaTarefasPage implements OnInit {
@@ -195,7 +190,6 @@ export class ListaTarefasPage implements OnInit {
             this.rt.remove(`/criar-tarefa/${id}`)
               .then(() => {
                 console.log('Tarefa excluída');
-                // Opcional: remover da lista local sem precisar recarregar tudo
                 this.dados = this.dados.filter(t => t.id !== id);
               })
               .catch(err => console.error('Erro ao excluir tarefa', err));

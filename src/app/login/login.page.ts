@@ -7,12 +7,9 @@ import {
   IonTitle, 
   IonContent, 
   IonImg, 
-  IonList, 
-  IonItem, 
   IonInput, 
   IonInputPasswordToggle,
   IonButton,
-  IonButtons
 } from '@ionic/angular/standalone';
 import {RouterLink, RouterModule } from '@angular/router';
 import { AutenticacaoService } from '../service/autenticacao.service';
@@ -25,8 +22,6 @@ import { AutenticacaoService } from '../service/autenticacao.service';
   standalone: true,
   imports: [
     IonInput,
-    IonItem, 
-    IonList, 
     IonImg, 
     IonHeader, 
     IonToolbar, 

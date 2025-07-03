@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Listar Tarefas</ion-title>
+    <ion-title>Dashboard</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -9,10 +9,9 @@
     <ion-toolbar></ion-toolbar>
   </ion-header>
 
-  <ion-button expand="block" href="criar-tarefa">Adicionar</ion-button>
-  <ion-button expand="block" href="criar-tarefa">Dashboard</ion-button>
+  <ion-button expand="block" routerLink="/criar-tarefa">Adicionar</ion-button>
 
-  <p-chart type="pie" [data]="data"/>
+  <canvas #pieCanvas></canvas>
   <ion-card *ngFor="let item of dados">
     <ion-card-header>
       <ion-card-title>{{ item.titulo }}</ion-card-title>

@@ -3,8 +3,23 @@
   import { FormsModule } from '@angular/forms';
   import { addIcons } from 'ionicons';
   import { Router, RouterLink, RouterModule, ActivatedRoute} from '@angular/router';
-  import { pencil,trash,add,arrowBack} from 'ionicons/icons';
-  import { IonContent, IonHeader, IonTitle, IonToolbar,IonInput,IonTextarea,IonItem,IonList,IonSelect,IonSelectOption,IonButton, IonIcon,IonButtons, IonBackButton } from '@ionic/angular/standalone';
+  import { trash,add,arrowBack} from 'ionicons/icons';
+  import { 
+    IonContent, 
+    IonHeader, 
+    IonTitle, 
+    IonToolbar,
+    IonInput,
+    IonTextarea,
+    IonItem,
+    IonList,
+    IonSelect,
+    IonSelectOption,
+    IonButton, 
+    IonIcon,
+    IonButtons, 
+    IonBackButton 
+  } from '@ionic/angular/standalone';
   import { RealtimeDatabaseService } from '../firebase/realtime-database.service';
   import { AlertController } from '@ionic/angular';
   import { RequisicaoService } from '../service/requisicao.service';
@@ -14,7 +29,25 @@
     templateUrl: './criatarefa.page.html',
     styleUrls: ['./criatarefa.page.scss'],
     standalone: true,
-    imports: [IonBackButton, IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule,IonInput,IonTextarea,IonItem,IonList,IonSelect,IonSelectOption,IonButton,IonIcon,IonButtons, IonBackButton]
+    imports: [
+      IonBackButton, 
+      IonContent, 
+      IonHeader, 
+      IonTitle, 
+      IonToolbar, 
+      CommonModule, 
+      FormsModule,
+      IonInput,
+      IonTextarea,
+      IonItem,
+      IonList,
+      IonSelect,
+      IonSelectOption,
+      IonButton,
+      IonIcon,
+      IonButtons, 
+      IonBackButton
+    ]
   })
   export class CriatarefaPage implements OnInit {
 

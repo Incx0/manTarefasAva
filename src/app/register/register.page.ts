@@ -7,8 +7,6 @@ import {
   IonTitle, 
   IonContent, 
   IonImg, 
-  IonList, 
-  IonItem, 
   IonInput, 
   IonInputPasswordToggle,
   IonButton,
@@ -26,8 +24,6 @@ RequisicaoService
   standalone: true,
   imports: [
     IonInput,
-    IonItem, 
-    IonList, 
     IonImg, 
     IonHeader, 
     IonToolbar, 
