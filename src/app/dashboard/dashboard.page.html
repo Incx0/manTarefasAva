@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Listar Tarefas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar></ion-toolbar>
+  </ion-header>
+
+  <ion-button expand="block" href="criar-tarefa">Adicionar</ion-button>
+  <ion-button expand="block" href="criar-tarefa">Dashboard</ion-button>
+
+  <p-chart type="pie" [data]="data"/>
+  <ion-card *ngFor="let item of dados">
+    <ion-card-header>
+      <ion-card-title>{{ item.titulo }}</ion-card-title>
+      <ion-card-subtitle>{{ item.responsavel }} — {{ item.status | titlecase }}</ion-card-subtitle>
+      <ion-card-subtitle>{{ item.descricao }}</ion-card-subtitle>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <ion-card-subtitle>{{ item.etapas.length }} etapa(s)</ion-card-subtitle>
+      
+      <ion-progress-bar [value]="getProgresso(item.etapas)"></ion-progress-bar>
+      <ion-item *ngFor="let etapa of item.etapas; let i = index">
+        <ion-label>
+          {{etapa.descricao}}
+        </ion-label>
+      
+        <ion-label>
+          {{etapa.status}}
+        </ion-label>
+      </ion-item>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>

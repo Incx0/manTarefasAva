@@ -1,0 +1,87 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title class="center-title">Criação de tarefa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+    </ion-toolbar>
+  </ion-header>
+  <ion-input label="Tarefa" label-placement="floating" fill="outline" placeholder="Insira a tarefa" [(ngModel)]="titulo"></ion-input>
+  <h3>Descrição:</h3>
+  <ion-textarea
+  placeholder="Insira a descrição da tarefa"
+  [clearOnEdit]="true"
+  [(ngModel)]="descricao"
+ ></ion-textarea>
+ <ion-list>
+  <ion-item>
+    <ion-select
+    placeholder="Selecione o responsável"
+    [(ngModel)]="responsavel"
+    name="responsavel"
+    interface="popover"
+    ok-text="OK"
+    cancel-text="Cancelar"
+    >
+      <ion-select-option *ngFor="let usuario of usuarios" [value]="usuario.nome">
+        {{ usuario.nome }}
+      </ion-select-option>
+    </ion-select>
+  </ion-item>
+</ion-list>
+<h3>Adicionar etapas:</h3>
+<ion-list>
+  <ion-item *ngFor="let etapa of etapas; let i = index">
+    <ion-input
+      [(ngModel)]="etapa.descricao"
+      placeholder="Descrição da etapa"
+      fill="outline"
+      >
+    </ion-input>
+
+    <ion-select
+      [(ngModel)]="etapa.status"
+      placeholder="Status"
+      style="min-width: 120px; margin-right: 8px;">
+      <ion-select-option value="pendente">Pendente</ion-select-option>
+      <ion-select-option value="concluida">Concluída</ion-select-option>
+    </ion-select>
+
+  </ion-item>
+</ion-list>
+
+<ion-button
+  color="gray"
+  size="small"
+  (click)="adicionarEtapa()">
+  <ion-icon name="add" style="font-size: 25px; color:white; margin-right: 2px;"></ion-icon>
+</ion-button>
+<ion-button routerLink="/lista-tarefas" expand="block" (click)="salvar()">Salvar</ion-button>
+<ion-button expand="block" color="danger" routerLink="/lista-tarefas">Cancelar</ion-button>
+</ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

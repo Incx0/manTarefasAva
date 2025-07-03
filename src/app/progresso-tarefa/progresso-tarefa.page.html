@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Progresso da Tarefa</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Progresso da tarefa</ion-title>
+    </ion-toolbar>
+    
+  </ion-header>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Titulo Tarefa</ion-card-title>
+      <ion-button>Salvar</ion-button>
+      <ion-card-subtitle>Descricao tarefa</ion-card-subtitle>
+      <ion-progress-bar [value]="3"></ion-progress-bar>
+    </ion-card-header>
+  </ion-card>
+  <div>
+    <ion-title>Etapas</ion-title>
+    <ion-card>
+      <ion-card-content>
+        <ion-checkbox labelPlacement="end">etapa 1</ion-checkbox>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

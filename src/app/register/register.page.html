@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button default-href="#"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Registrar-se
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Registrar-se</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <div class="container">
+    <ion-img
+    src="../../assets/img/Senac_logo.svg.png"
+    alt="The Wisconsin State Capitol building in Madison, WI at night"></ion-img>
+    <div class="registerContent">
+      <ion-input label="Nome" fill="outline" [(ngModel)]="nome"></ion-input>
+      <ion-input label="Usuário/login" fill="outline" [(ngModel)]="login"></ion-input>
+      <ion-input type="email" label="E-mail" fill="outline" [(ngModel)]="email"></ion-input>
+      <ion-input type="password" label="Senha" value="" fill="outline" [(ngModel)]="senha">
+        <ion-input-password-toggle slot="end"></ion-input-password-toggle>
+      </ion-input>
+    </div>
+    <div class="registerDivAct">
+      <ion-button expand="block" class="registerActBtn" (click)="salvar()" routerLink="/login">Cadastrar-se</ion-button>
+    </div>
+  </div>
+
+  
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Listar Tarefas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar></ion-toolbar>
+  </ion-header>
+
+  <ion-button expand="block" href="criar-tarefa">Adicionar</ion-button>
+  <ion-button expand="block" href="dashboard">Dashboard</ion-button>
+
+  <ion-card *ngFor="let item of dados">
+    <ion-card-header>
+      <ion-card-title>{{ item.titulo }}</ion-card-title>
+      <ion-card-subtitle>{{ item.responsavel }} — {{ item.status | titlecase }}</ion-card-subtitle>
+      <ion-card-subtitle>{{ item.descricao }}</ion-card-subtitle>
+    </ion-card-header>
+    
+    <ion-card-content>
+      <ion-card-subtitle>{{ item.etapas.length }} etapa(s)</ion-card-subtitle>
+      
+      <ion-progress-bar [value]="getProgresso(item.etapas)"></ion-progress-bar>
+      <ion-item *ngFor="let etapa of item.etapas; let i = index">
+        <ion-input
+        [(ngModel)]="etapa.descricao"
+        (ionBlur)="atualizarDescricao(item.id, i, etapa.descricao)"
+        placeholder="Descrição da etapa"
+        ></ion-input>
+      
+        <ion-select
+          [(ngModel)]="etapa.status"
+          (ionChange)="atualizarStatus(item.id, i, etapa.status)"
+          placeholder="Status">
+          <ion-select-option value="pendente">Pendente</ion-select-option>
+          <ion-select-option value="concluida">Concluída</ion-select-option>
+        </ion-select>
+      
+        <ion-button fill="clear" color="danger" (click)="removerEtapa(item.id, i)">
+          <ion-icon name="trash" slot="icon-only"></ion-icon>
+        </ion-button>
+      </ion-item>
+      <ion-button size="small" fill="clear" (click)="adicionarEtapa(item.id)">
+        <ion-icon name="add" slot="start"></ion-icon>
+      </ion-button>
+      <ion-button
+        fill="clear"
+        color="danger"
+        size="small"
+        (click)="excluirTarefa(item.id)">
+          <ion-icon name="trash" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>

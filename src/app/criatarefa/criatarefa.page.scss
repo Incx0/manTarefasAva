@@ -1,0 +1,79 @@
+/* Compactar os inputs e seletores */
+ion-input,
+ion-textarea,
+ion-select,
+ion-list,
+h3 {
+  margin: 8px 12px;
+  font-size: 14px;
+}
+
+/* Reduz a altura e borda dos inputs */
+ion-input,
+ion-textarea,
+ion-select {
+  --padding-start: 8px;
+  --padding-end: 8px;
+  --padding-top: 6px;
+  --padding-bottom: 6px;
+  --border-radius: 8px;
+  --min-height: 36px;
+}
+
+/* Título centralizado e menor */
+ion-title {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Subtítulos */
+h3 {
+  font-size: 1rem;
+  margin: 16px 12px 6px;
+  font-weight: 500;
+}
+
+/* Itens de etapa */
+ion-item {
+  --inner-padding-end: 8px;
+  --padding-start: 12px;
+  --min-height: 44px;
+}
+
+/* Botão +, Salvar e Cancelar mais enxutos */
+ion-button {
+  margin: 6px auto;
+  height: 36px;
+  font-size: 14px;
+  --border-radius: 8px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+}
+
+/* Botões Salvar e Cancelar centralizados abaixo do botão + */
+ion-button:last-of-type,
+ion-button:nth-last-of-type(2) {
+  width: 90%;
+}
+
+/* Ícone menor */
+ion-icon {
+  font-size: 20px !important;
+}
+
+/* Diminui borda só na etapa 1 */
+ion-list:nth-of-type(2) ion-item ion-input,
+ion-list:nth-of-type(2) ion-item ion-select,
+ion-list:nth-of-type(2) ion-item ion-button {
+  --border-width: 1px;     /* borda mais fina */
+  --border-radius: 4px;    /* menos arredondada */
+}
+.center-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    text-align: center;
+  }
+  
