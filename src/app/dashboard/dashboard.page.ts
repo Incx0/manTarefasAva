@@ -15,15 +15,9 @@ import {
   IonCardSubtitle,
   IonProgressBar, 
   IonButton,
-  IonList,
   IonItem,
   IonLabel,
-  IonText,
   IonIcon,
-  IonBadge,
-  IonSelect,
-  IonSelectOption,
-  IonInput
 } from '@ionic/angular/standalone';
 import { RealtimeDatabaseService } from '../firebase/realtime-database.service';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -38,7 +32,7 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './dashboard.page.html',
   styleUrls: ['./dashboard.page.scss'],
   standalone: true,
-  imports: [IonInput, 
+  imports: [
     IonContent,
     FormsModule,
     IonHeader, 
@@ -54,16 +48,10 @@ import { HttpClient } from '@angular/common/http';
     NgForOf,
     CommonModule,
     IonButton,
-    IonList,
     IonItem,
     IonLabel,
-    IonText,
     IonIcon,
-    IonBadge, 
     TitleCasePipe,
-    IonSelect,
-    IonSelectOption,
-    IonInput,
     ChartModule
   ]
 })

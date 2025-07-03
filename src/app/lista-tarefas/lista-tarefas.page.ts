@@ -115,12 +115,6 @@ export class ListaTarefasPage implements OnInit {
     await alert.present();
   }
 
-  
-
-  editar(id: string) {
-    this.router.navigate(['/criar-tarefa', id]);
-  }
-
   atualizarStatus(tarefaId: string, etapaIndex: number, novoStatus: string) {
     const tarefa = this.dados.find(t => t.id === tarefaId);
     if (!tarefa) return;
